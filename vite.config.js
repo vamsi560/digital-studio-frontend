@@ -7,6 +7,11 @@ export default defineConfig({
     react(),
     basicSsl()
   ],
+  root: './',
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+  },
   server: {
     https: true,
     port: 5173,
@@ -17,3 +22,4 @@ export default defineConfig({
     }
   }
 })
+
