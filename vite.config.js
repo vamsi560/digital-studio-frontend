@@ -7,7 +7,6 @@ export default defineConfig({
     react(),
     basicSsl()
   ],
-  root: './',
   build: {
     outDir: 'dist',
     sourcemap: true,
