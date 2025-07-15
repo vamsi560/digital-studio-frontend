@@ -11,14 +11,5 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
   },
-  server: {
-    https: true,
-    port: 5173,
-    open: true,  // Automatically open the browser on server start
-    headers: {
-      'Cross-Origin-Opener-Policy': 'same-origin',
-      'Cross-Origin-Embedder-Policy': 'require-corp'
-    }
-  }
 })
 
