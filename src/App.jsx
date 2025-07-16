@@ -358,13 +358,13 @@ const PrototypeView = ({ onNavigate }) => {
                             <h3 className="text-xl font-bold text-white mb-4">Actions</h3>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button onClick={handleGenerateCode} disabled={isLoading || flowOrder.some(f => f === null)} className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors">Generate Code</button>
-                                <button onClick={handlePreview} disabled={Object.keys(generatedFiles).length === 0} className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors">Preview</button>
-                                <button onClick={handleDownload} disabled={Object.keys(generatedFiles).length === 0} className="flex-1 bg-gray-600 hover:bg-gray-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors">Download Codebase</button>
+                                <button onClick={handlePreview} disabled={Object.keys(generatedFiles || {}).length === 0} className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors">Preview</button>
+                                <button onClick={handleDownload} disabled={Object.keys(generatedFiles || {}).length === 0} className="flex-1 bg-gray-600 hover:bg-gray-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors">Download Codebase</button>
                                 <input type="text" value={projectName} onChange={(e) => setProjectName(e.target.value)} placeholder="Enter Project Name" className="bg-gray-700 border border-gray-600 rounded-md py-2 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"/>
                             </div>
                         </div>
                     )}
-                    {generatedFiles && Object.keys(generatedFiles).length > 0 && !isLoading && (
+                    {(generatedFiles && Object.keys(generatedFiles || {}).length > 0 && !isLoading) && (
                          <div className="w-full bg-gray-900 border border-gray-700 rounded-lg text-sm text-gray-200 relative mt-6">
                             <div className="p-4 border-b border-gray-700"><h2 className="font-bold text-lg">Generated Code</h2></div>
                             {accuracyResult && (
@@ -376,7 +376,7 @@ const PrototypeView = ({ onNavigate }) => {
                                     </div>
                                 </div>
                             )}
-                            <pre className="p-4 bg-gray-800 rounded-b-lg overflow-x-auto"><code className="font-mono">{Object.entries(generatedFiles).map(([path, code]) => `// --- FILENAME: ${path} ---\n${code}`).join('\n\n')}</code></pre>
+                            <pre className="p-4 bg-gray-800 rounded-b-lg overflow-x-auto"><code className="font-mono">{Object.entries(generatedFiles || {}).map(([path, code]) => `// --- FILENAME: ${path} ---\n${code}`).join('\n\n')}</code></pre>
                         </div>
                     )}
                 </main>
