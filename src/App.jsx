@@ -364,7 +364,7 @@ const PrototypeView = ({ onNavigate }) => {
                             </div>
                         </div>
                     )}
-                    {Object.keys(generatedFiles).length > 0 && !isLoading && (
+                    {generatedFiles && Object.keys(generatedFiles).length > 0 && !isLoading && (
                          <div className="w-full bg-gray-900 border border-gray-700 rounded-lg text-sm text-gray-200 relative mt-6">
                             <div className="p-4 border-b border-gray-700"><h2 className="font-bold text-lg">Generated Code</h2></div>
                             {accuracyResult && (
