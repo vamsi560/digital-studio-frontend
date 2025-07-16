@@ -164,7 +164,7 @@ const PrototypeView = ({ onNavigate }) => {
         setIsLoading(true);
         setWorkflowStatus({ text: 'Importing from Figma...', architect: 'running' });
         try {
-            const response = await fetch('https://digital-studio-backend.azurewebsites.net/api/import-figma', {
+            const response = await fetch('https://digitalstudio-backend.azurewebsites.net/api/import-figma', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ figmaUrl }),
@@ -206,7 +206,7 @@ const PrototypeView = ({ onNavigate }) => {
 
         try {
             setWorkflowStatus({ text: 'Architect: Analyzing project structure...', architect: 'running' });
-            const response = await fetch('https://digital-studio-backend.azurewebsites.net/api/generate-code', {
+            const response = await fetch('https://digitalstudio-backend.azurewebsites.net/api/generate-code', {
                 method: 'POST',
                 body: formData,
             });
