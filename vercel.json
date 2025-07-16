@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://digital-studio-backend.vercel.app/api/:match*"
+    }
+  ]
+}
