@@ -87,16 +87,16 @@ const LandingView = ({ onNavigate }) => (
                     <header className="mb-12 md:mb-16">
                         <div className="inline-flex items-center space-x-3 mb-2">
                             <div className="border border-gray-600 p-2 rounded-lg"><span className="font-bold text-3xl text-white">VM</span></div>
-                            <span className="text-3xl font-bold text-white">Digital Studio</span>
+                            <span className="text-3xl font-bold text-green-500">Digital Studio</span>
                         </div>
                     </header>
                     <main>
                         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-12 md:mb-16">
                             <span className="text-white">Introducing </span>
-                            <span className="bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text">Digital Studio</span>
+                            <span className="bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text"></span>
                         </h1>
                         <section>
-                            <h2 className="text-xl text-gray-400 mb-8">We do ui/ux design for</h2>
+                            <h2 className="text-xl text-gray-400 mb-8"></h2>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                                 <ServiceCard title="Prototype Lab" svgPath="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" onClick={() => onNavigate('prototype')} />
                                 <ServiceCard title="App Lab" svgPath="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" onClick={() => onNavigate('app-lab-landing')} />
